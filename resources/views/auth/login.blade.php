@@ -2,14 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
+    <title>Login BCA</title>
+    <link rel="stylesheet" href="{{ asset('css/login.css') }}">
 </head>
 <body>
-    <form action="{{ route('login') }}" method="POST">
-        @csrf
-        <input type="email" name="email" placeholder="Email" required>
-        <input type="password" name="password" placeholder="Password" required>
-        <button type="submit">Login</button>
-    </form>
+    <div class="login-container">
+        <div class="logo">
+            <img src="{{ asset('images/Logo.png') }}" alt="BCA Logo">
+        </div>
+
+        @if(session('success'))
+            <div class="alert success">{{ session('success') }}</div>
+        @endif
+
+        @if(session('error'))
+            <div class="alert error">{{ session('error') }}</div>
+        @endif
+
+        <h2>Login ke Akun Anda</h2>
+        <form action="{{ route('login') }}" method="POST">
+            @csrf
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Masuk</button>
+        </form>
+    </div>
+    <script>
+    setTimeout(() => {
+        const alerts = document.querySelectorAll('.alert, .error');
+        alerts.forEach(alert => alert.style.display = 'none');
+    }, 3000);
+</script>
+
 </body>
 </html>
