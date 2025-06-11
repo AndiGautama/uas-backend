@@ -14,14 +14,23 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
-        $credentials = $request->only('email', 'password');
+        // Validasi input
+        $request->validate([
+            'username' => 'required|string',
+            'password' => 'required|string',
+        ]);
 
+        // Ambil kredensial username + password
+        $credentials = $request->only('username', 'password');
+
+        // Coba login
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
             return redirect()->route('home')->with('success', 'Login berhasil. Selamat datang!');
         }
 
-        return back()->with('error', 'Email atau password salah.');
+        // Jika gagal
+        return back()->with('error', 'Username atau password salah.');
     }
 
     public function logout(Request $request)

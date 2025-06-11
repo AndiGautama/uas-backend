@@ -1,0 +1,54 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #0d6efd;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+}
+
+.sidebar a,
+.sidebar form button {
+    padding: 15px 20px;
+    text-decoration: none;
+    color: white;
+    display: block;
+    border: none;
+    background: none;
+    text-align: left;
+    width: 100%;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.sidebar a:hover,
+.sidebar form button:hover {
+    background-color: #084298;
+}
+
+.content {
+    flex-grow: 1;
+    padding: 40px;
+    background-color: #f4f6f9;
+}
+
+.logout-btn {
+    font-size: 1rem;
+}
+
+form {
+    margin: 0;
+}

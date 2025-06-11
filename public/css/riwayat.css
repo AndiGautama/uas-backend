@@ -1,0 +1,62 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7f9fc;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    max-width: 700px;
+    margin: 40px auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #0a3d62;
+}
+
+.transfer-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.transfer-list li {
+    padding: 12px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.transfer-list li:last-child {
+    border-bottom: none;
+}
+
+.transfer-list .date {
+    color: #555;
+    font-size: 0.95em;
+}
+
+.transfer-list .from,
+.transfer-list .to,
+.transfer-list .amount {
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.transfer-list .empty {
+    text-align: center;
+    color: #777;
+    padding: 15px;
+}
+
+.back-btn {
+    display: inline-block;
+    margin-top: 25px;
+    text-decoration: none;
+    color: #0a3d62;
+    font-weight: bold;
+}
