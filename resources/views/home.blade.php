@@ -5,44 +5,45 @@
     <title>Menu Utama</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    {{-- Bootstrap CSS --}}
+    {{-- Bootstrap --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    {{-- Bootstrap Icons --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
     {{-- CSS Lokal --}}
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
 </head>
 <body>
     <div class="sidebar">
-        <h2>BCA Online</h2>
-        <a href="{{ route('cek.saldo') }}">1. Cek Saldo</a>
-        <a href="{{ route('transfer.index') }}">2. Transfer Saldo</a>
-        <a href="{{ route('transfer.riwayat') }}">3. Riwayat Transfer</a>
-        <a href="{{ route('withdrawal.index') }}">4. Penarikan Saldo</a>
-        <a href="{{ route('withdrawal.riwayat') }}">5. Riwayat Penarikan</a>
-        <a href="{{ route('topup.form') }}">6. Top Up Pulsa</a>
-        <a href="{{ route('topup.index') }}">7. Top Up Game</a>
-<a href="{{ route('topupgame.riwayat') }}">8. Riwayat Top Up</a>
-
+        <h2><i class="bi bi-bank"></i> BCA Online</h2>
+        <a href="{{ route('cek.saldo') }}"><i class="bi bi-cash-coin me-2"></i> Cek Saldo</a>
+        <a href="{{ route('transfer.index') }}"><i class="bi bi-arrow-left-right me-2"></i> Transfer Saldo</a>
+        <a href="{{ route('transfer.riwayat') }}"><i class="bi bi-clock-history me-2"></i> Riwayat Transfer</a>
+        <a href="{{ route('withdrawal.index') }}"><i class="bi bi-box-arrow-up me-2"></i> Penarikan Saldo</a>
+        <a href="{{ route('withdrawal.riwayat') }}"><i class="bi bi-clock me-2"></i> Riwayat Penarikan</a>
+        <a href="{{ route('topup.form') }}"><i class="bi bi-phone me-2"></i> Top Up Pulsa</a>
+        <a href="{{ route('topup.index') }}"><i class="bi bi-controller me-2"></i> Top Up Game</a>
+        <a href="{{ route('topupgame.riwayat') }}"><i class="bi bi-journal-text me-2"></i> Riwayat Top Up</a>
 
         <form action="{{ route('logout') }}" method="POST">
             @csrf
-            <button type="submit" class="logout-btn">9. Logout</button>
+            <button type="submit" class="logout-btn"><i class="bi bi-box-arrow-right me-2"></i> Logout</button>
         </form>
     </div>
 
     <div class="content">
-        <div style="text-align: right; margin-top: 10px;">
-            <p id="tanggal" style="margin: 0; font-weight: bold;"></p>
-            <p id="clock" style="margin: 0; font-weight: bold;"></p>
+        <div class="d-flex justify-content-end mb-3">
+            <span id="tanggal" class="badge bg-primary me-2"></span>
+            <span id="clock" class="badge bg-primary"></span>
         </div>
 
         <h2>Selamat Datang di Menu Utama</h2>
         <p>Silakan pilih menu dari sidebar di sebelah kiri.</p>
     </div>
 
-    {{-- MODAL INVOICE --}}
+    {{-- Modal Invoice Pulsa --}}
     @if(session('invoice'))
-        <!-- Modal Bootstrap -->
         <div class="modal fade" id="invoiceModal" tabindex="-1" aria-labelledby="invoiceModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -62,7 +63,6 @@
             </div>
         </div>
 
-        {{-- Auto-popup on page load --}}
         <script>
             document.addEventListener('DOMContentLoaded', function () {
                 var invoiceModal = new bootstrap.Modal(document.getElementById('invoiceModal'));
@@ -71,7 +71,7 @@
         </script>
     @endif
 
-    {{-- Jam & Tanggal Real-Time --}}
+    {{-- Jam & Tanggal --}}
     <script>
         function updateWaktu() {
             const now = new Date();
@@ -83,7 +83,7 @@
         }
 
         setInterval(updateWaktu, 1000);
-        updateWaktu(); // panggil pertama kali
+        updateWaktu();
     </script>
 
     {{-- Bootstrap JS --}}

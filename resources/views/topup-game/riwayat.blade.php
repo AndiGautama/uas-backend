@@ -40,7 +40,9 @@
                                 {{ ucfirst($topup->status) }}
                             </span>
                         </td>
-                        <td>{{ \Carbon\Carbon::parse($topup->created_at)->translatedFormat('d F Y H:i') }}</td>
+                        <td>
+                            {{ \Carbon\Carbon::parse($topup->created_at)->setTimezone('Asia/Jakarta')->translatedFormat('d F Y H:i') }} WIB
+                        </td>
                     </tr>
                 @endforeach
             </tbody>

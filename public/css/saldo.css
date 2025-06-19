@@ -1,42 +1,54 @@
+/* Background full screen */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f7fa;
-    color: #333;
     margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #74ebd5, #acb6e5);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Card saldo */
+.saldo-wrapper {
+    width: 100%;
+    max-width: 400px;
     padding: 20px;
 }
 
-.container {
-    max-width: 500px;
-    margin: 40px auto;
-    background-color: #ffffff;
+.saldo-card {
+    background-color: white;
     padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-radius: 15px;
+    text-align: left;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 0.5s ease-in-out;
 }
 
-h2 {
-    text-align: center;
-    color: #0a3d62;
-    margin-bottom: 25px;
+.icon-saldo i {
+    font-size: 40px;
+    color: #0d6efd;
 }
 
-.info p {
+h4 {
+    font-weight: 600;
+    color: #343a40;
+}
+
+.info-item {
+    margin-bottom: 15px;
     font-size: 16px;
-    margin: 10px 0;
 }
 
-.back-btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 16px;
-    background-color: #0a3d62;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 6px;
-    transition: background-color 0.3s ease;
+.saldo {
+    font-size: 18px;
+    font-weight: bold;
+    color: #198754;
 }
 
-.back-btn:hover {
-    background-color: #1e3799;
+/* Animasi masuk */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
