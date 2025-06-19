@@ -27,6 +27,11 @@
     </div>
 
     <div class="content">
+        <div style="text-align: right; margin-top: 10px;">
+            <p id="tanggal" style="margin: 0; font-weight: bold;"></p>
+            <p id="clock" style="margin: 0; font-weight: bold;"></p>
+        </div>
+
         <h2>Selamat Datang di Menu Utama</h2>
         <p>Silakan pilih menu dari sidebar di sebelah kiri.</p>
     </div>
@@ -61,6 +66,21 @@
             });
         </script>
     @endif
+
+    {{-- Jam & Tanggal Real-Time --}}
+    <script>
+        function updateWaktu() {
+            const now = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            const tanggal = now.toLocaleDateString('id-ID', options);
+            const jam = now.toLocaleTimeString('id-ID');
+            document.getElementById("tanggal").innerText = tanggal;
+            document.getElementById("clock").innerText = "Jam: " + jam;
+        }
+
+        setInterval(updateWaktu, 1000);
+        updateWaktu(); // panggil pertama kali
+    </script>
 
     {{-- Bootstrap JS --}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
