@@ -1,13 +1,13 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f7f9fc;
+    background-color: #eef1f4;
     margin: 0;
     padding: 20px;
     color: #333;
 }
 
 .container {
-    max-width: 700px;
+    max-width: 800px;
     margin: 40px auto;
     background-color: #fff;
     padding: 30px;
@@ -15,48 +15,177 @@ body {
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #0a3d62;
+    padding-bottom: 15px;
+}
+
 h2 {
-    text-align: center;
-    margin-bottom: 25px;
+    margin: 0;
     color: #0a3d62;
 }
 
+.action-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.pdf-btn {
+    background-color: #e74c3c;
+    color: white;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.pdf-btn:hover {
+    background-color: #c0392b;
+}
+
+/* Filter Section */
+.filter-section {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-left: 4px solid #0a3d62;
+}
+
+.filter-form {
+    margin: 0;
+}
+
+.filter-row {
+    display: flex;
+    gap: 15px;
+    align-items: end;
+    flex-wrap: wrap;
+}
+
+.filter-item {
+    flex: 1;
+    min-width: 150px;
+}
+
+.filter-item label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.date-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccd1d9;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.filter-pdf-btn {
+    background-color: #27ae60;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    height: fit-content;
+    transition: background-color 0.3s ease;
+}
+
+.filter-pdf-btn:hover {
+    background-color: #229954;
+}
+
+/* Transfer List */
 .transfer-list {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
+    margin: 20px 0;
 }
 
 .transfer-list li {
-    padding: 12px;
-    border-bottom: 1px solid #e0e0e0;
-}
-
-.transfer-list li:last-child {
-    border-bottom: none;
-}
-
-.transfer-list .date {
-    color: #555;
-    font-size: 0.95em;
-}
-
-.transfer-list .from,
-.transfer-list .to,
-.transfer-list .amount {
-    display: inline-block;
-    margin-left: 5px;
-}
-
-.transfer-list .empty {
-    text-align: center;
-    color: #777;
+    background-color: #f8f9fa;
+    margin: 10px 0;
     padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid #0a3d62;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.transfer-list li:hover {
+    background-color: #e8f4fd;
+    transform: translateX(5px);
+    transition: all 0.3s ease;
+}
+
+.date {
+    color: #666;
+    font-size: 12px;
+}
+
+.from, .to {
+    color: #333;
+}
+
+.amount {
+    color: #27ae60;
+    font-weight: bold;
+}
+
+.empty {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    background-color: #fff3cd !important;
+    border-left-color: #ffc107 !important;
 }
 
 .back-btn {
     display: inline-block;
-    margin-top: 25px;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #6c757d;
+    color: white;
     text-decoration: none;
-    color: #0a3d62;
+    border-radius: 6px;
     font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.back-btn:hover {
+    background-color: #5a6268;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header-section {
+        flex-direction: column;
+        gap: 15px;
+        align-items: stretch;
+    }
+    
+    .filter-row {
+        flex-direction: column;
+    }
+    
+    .filter-item {
+        min-width: 100%;
+    }
+    
+    .transfer-list li {
+        font-size: 13px;
+        padding: 12px;
+    }
 }
