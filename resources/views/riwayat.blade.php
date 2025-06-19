@@ -7,7 +7,34 @@
 </head>
 <body>
     <div class="container">
-        <h2>Riwayat Transfer</h2>
+        <div class="header-section">
+            <h2>Riwayat Transfer</h2>
+            <div class="action-buttons">
+                <a href="{{ route('riwayat.cetak-pdf') }}" class="pdf-btn" target="_blank">
+                    📄 Cetak PDF
+                </a>
+            </div>
+        </div>
+
+        <!-- Filter Form (Opsional) -->
+        <div class="filter-section">
+            <form method="POST" action="{{ route('riwayat.cetak-pdf-filter') }}" class="filter-form">
+                @csrf
+                <div class="filter-row">
+                    <div class="filter-item">
+                        <label>Dari Tanggal:</label>
+                        <input type="date" name="start_date" class="date-input">
+                    </div>
+                    <div class="filter-item">
+                        <label>Sampai Tanggal:</label>
+                        <input type="date" name="end_date" class="date-input">
+                    </div>
+                    <div class="filter-item">
+                        <button type="submit" class="filter-pdf-btn">📄 PDF Filter</button>
+                    </div>
+                </div>
+            </form>
+        </div>
 
         <ul class="transfer-list">
             @forelse($transfers as $transfer)
