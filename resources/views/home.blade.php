@@ -20,9 +20,13 @@
         <a href="{{ route('withdrawal.index') }}">4. Penarikan Saldo</a>
         <a href="{{ route('withdrawal.riwayat') }}">5. Riwayat Penarikan</a>
         <a href="{{ route('topup.form') }}">6. Top Up Pulsa</a>
+        <a href="{{ route('topup.index') }}">7. Top Up Game</a>
+<a href="{{ route('topupgame.riwayat') }}">8. Riwayat Top Up</a>
+
+
         <form action="{{ route('logout') }}" method="POST">
             @csrf
-            <button type="submit" class="logout-btn">7. Logout</button>
+            <button type="submit" class="logout-btn">9. Logout</button>
         </form>
     </div>
 

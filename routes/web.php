@@ -6,15 +6,20 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TransferController;
 use App\Http\Controllers\WithdrawalController;
 use App\Http\Controllers\TopupPulsaController;
+use App\Http\Controllers\TopUpGameController;
 
 Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
+// Login
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login.form');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 
+// Route yang butuh login
 Route::middleware('auth')->group(function () {
+
+    // Home
     Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::get('/saldo', [HomeController::class, 'cekSaldo'])->name('cek.saldo');
 
@@ -30,6 +35,12 @@ Route::middleware('auth')->group(function () {
     Route::post('/topup', [TopupPulsaController::class, 'submit'])->name('topup.submit');
     Route::get('/topup/riwayat', [TopupPulsaController::class, 'riwayat'])->name('topup.riwayat');
 
+    // Top-Up Game
+    Route::get('/topup-game', [TopUpGameController::class, 'index'])->name('topup.index'); // <- route name dipakai di home.blade.php
+    Route::post('/topup-game', [TopUpGameController::class, 'store'])->name('topup.store');
+    Route::get('/topup-game/riwayat', [TopUpGameController::class, 'riwayat'])->name('topupgame.riwayat');
+    Route::get('/topup-game/form', [TopUpGameController::class, 'form'])->name('topupgame.form'); // optional
+
     // Penarikan
     Route::get('/withdrawal', [WithdrawalController::class, 'index'])->name('withdrawal.index');
     Route::post('/withdrawal', [WithdrawalController::class, 'store'])->name('withdrawal.store');
@@ -39,6 +50,6 @@ Route::middleware('auth')->group(function () {
     Route::patch('/withdrawal/status/{id}', [WithdrawalController::class, 'updateStatus'])->name('withdrawal.update-status');
     Route::get('/withdrawal/riwayat/cetak-pdf', [WithdrawalController::class, 'cetakPdf'])->name('withdrawal.cetak-pdf');
 
-    // Logout dipindahkan ke dalam group auth
+    // Logout
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });

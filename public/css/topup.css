@@ -1,0 +1,304 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f1f5f9;
+    margin: 0;
+    padding: 0;
+}
+
+.form-container {
+    max-width: 500px;
+    margin: 60px auto;
+    background-color: white;
+    padding: 35px 40px;
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.form-container h2 {
+    color: #0f2f50;
+    font-size: 22px;
+    margin-bottom: 25px;
+}
+
+form {
+    text-align: left;
+}
+
+form label {
+    display: block;
+    margin-bottom: 6px;
+    color: #1f2937;
+    font-weight: 500;
+}
+
+form input[type="text"],
+form input[type="number"] {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    margin-bottom: 18px;
+    background-color: #f9fafb;
+    font-size: 15px;
+}
+
+form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #0c4a6e;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+form button:hover {
+    background-color: #0a3b56;
+}
+
+.back-link {
+    margin-top: 20px;
+}
+
+.back-link a {
+    text-decoration: none;
+    color: #0f172a;
+    font-size: 14px;
+}
+
+.alert-success {
+    background-color: #d1fae5;
+    color: #065f46;
+    border-left: 4px solid #34d399;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+}
+
+/* Hilangkan spinner input number di browser Chrome, Safari, Edge */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Hilangkan spinner di Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.voucher-container {
+    text-align: center;
+    padding: 30px;
+}
+
+.voucher-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.voucher-card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.2s;
+}
+
+.voucher-card:hover {
+    transform: scale(1.03);
+}
+
+.voucher-card img {
+    max-width: 100%;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.voucher-card h3 {
+    font-size: 18px;
+    color: #0c4a6e;
+    margin-bottom: 8px;
+}
+
+.voucher-card p {
+    font-size: 14px;
+    color: #374151;
+}
+
+.voucher-card .btn {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 10px 18px;
+    background-color: #0c4a6e;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+/* === Riwayat Top Up Layout === */
+.riwayat-container {
+    max-width: 950px;
+    margin: 40px auto;
+    background-color: #ffffff;
+    padding: 35px 40px;
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.riwayat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.riwayat-header h4 {
+    color: #0f2f50;
+    font-size: 24px;
+    border-bottom: 2px solid #0c4a6e;
+    display: inline-block;
+    padding-bottom: 4px;
+}
+
+.table-topup {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.table-topup thead {
+    background-color: #f1f5f9;
+}
+
+.table-topup th, .table-topup td {
+    border: 1px solid #e2e8f0;
+    padding: 12px 16px;
+    text-align: center;
+    font-size: 14px;
+    color: #1e293b;
+}
+
+.table-topup tbody tr:hover {
+    background-color: #f9fafb;
+}
+
+.alert-success {
+    background-color: #d1fae5;
+    color: #065f46;
+    border-left: 4px solid #34d399;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+/* Tombol navigasi */
+.btn-secondary {
+    display: inline-block;
+    background-color: #6c757d;
+    color: white;
+    padding: 10px 18px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    margin-top: 25px;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f1f5f9;
+    margin: 0;
+    padding: 0;
+}
+
+.riwayat-container {
+    max-width: 850px;
+    margin: 40px auto;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 25px 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.riwayat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #0c4a6e;
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+}
+
+.riwayat-header h4 {
+    font-size: 22px;
+    color: #0c4a6e;
+    margin: 0;
+}
+
+.table-topup {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+}
+
+.table-topup th,
+.table-topup td {
+    border: 1px solid #e2e8f0;
+    padding: 12px 14px;
+    text-align: left;
+}
+
+.table-topup th {
+    background-color: #f1f5f9;
+    color: #0c4a6e;
+}
+
+.table-topup tbody tr:nth-child(even) {
+    background-color: #f9fafb;
+}
+
+.alert-success {
+    background-color: #d1fae5;
+    color: #065f46;
+    border-left: 4px solid #34d399;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+}
+
+.alert-warning {
+    background-color: #fff3cd;
+    color: #856404;
+    border-left: 4px solid #ffc107;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+}
+
+.btn-secondary {
+    display: inline-block;
+    margin-top: 20px;
+    background-color: #4b5563;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.btn-secondary:hover {
+    background-color: #374151;
+}
