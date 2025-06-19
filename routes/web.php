@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TransferController;
 use App\Http\Controllers\WithdrawalController;
+use App\Http\Controllers\TopupPulsaController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -21,10 +22,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/transfer', [TransferController::class, 'index'])->name('transfer.index');
     Route::post('/transfer', [TransferController::class, 'store'])->name('transfer.store');
     Route::get('/riwayat', [TransferController::class, 'riwayat'])->name('transfer.riwayat');
-
-    // Cetak PDF Transfer
     Route::get('/riwayat/cetak-pdf', [TransferController::class, 'cetakPdf'])->name('riwayat.cetak-pdf');
     Route::post('/riwayat/cetak-pdf-filter', [TransferController::class, 'cetakPdfFilter'])->name('riwayat.cetak-pdf-filter');
+
+    // Top-Up Pulsa
+    Route::get('/topup', [TopupPulsaController::class, 'form'])->name('topup.form');
+    Route::post('/topup', [TopupPulsaController::class, 'submit'])->name('topup.submit');
+    Route::get('/topup/riwayat', [TopupPulsaController::class, 'riwayat'])->name('topup.riwayat');
 
     // Penarikan
     Route::get('/withdrawal', [WithdrawalController::class, 'index'])->name('withdrawal.index');
@@ -33,13 +37,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/withdrawal/riwayat', [WithdrawalController::class, 'riwayat'])->name('withdrawal.riwayat');
     Route::get('/withdrawal/form', [WithdrawalController::class, 'form'])->name('withdrawal.form');
     Route::patch('/withdrawal/status/{id}', [WithdrawalController::class, 'updateStatus'])->name('withdrawal.update-status');
-    
-    
-    // Cetak PDF riwayat penarikan
     Route::get('/withdrawal/riwayat/cetak-pdf', [WithdrawalController::class, 'cetakPdf'])->name('withdrawal.cetak-pdf');
-});
 
-
-    // Logout
+    // Logout dipindahkan ke dalam group auth
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
-
+});
